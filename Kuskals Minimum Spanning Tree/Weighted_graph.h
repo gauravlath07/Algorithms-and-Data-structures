@@ -1,28 +1,3 @@
-/*****************************************
- * Instructions
- *  - Replace 'uwuserid' with your uWaterloo User ID
- *  - Select the current calendar term and enter the year
- *  - List students with whom you had discussions and who helped you
- *
- * uWaterloo User ID:  uwuserid @uwaterloo.ca
- * Submitted for ECE 250
- * Department of Electrical and Computer Engineering
- * University of Waterloo
- * Calender Term of Submission:  (Winter|Spring|Fall) 201N
- *
- * By submitting this file, I affirm that
- * I am the author of all modifications to
- * the provided code.
- *
- * The following is a list of uWaterloo User IDs of those students
- * I had discussions with in preparing this project:
- *    -
- *
- * The following is a list of uWaterloo User IDs of those students
- * who helped me with this project (describe their help; e.g., debugging):
- *    -
- *****************************************/
-
 #ifndef WEIGHTED_GRAPH_H
 #define WEIGHTED_GRAPH_H
 
@@ -47,13 +22,8 @@ class Weighted_graph {
 		
         bool **check;
         double **graph_matrix;
-		// Do not implement these functions!
-		// By making these private and not implementing them, any attempt
-		// to make copies or assignments will result in errors
 		Weighted_graph( Weighted_graph const & );
 		Weighted_graph &operator=( Weighted_graph );
-
-		// your choice
 
 	public:
 		Weighted_graph( int = 10 );
@@ -69,7 +39,6 @@ class Weighted_graph {
         std::pair<int,int> find_lowest() const;
     
         double total_weight=0.0;
-	// Friends
 
 	friend std::ostream &operator<<( std::ostream &, Weighted_graph const & );
 };
@@ -78,7 +47,6 @@ const double Weighted_graph::INF = std::numeric_limits<double>::infinity();
 
 Weighted_graph::Weighted_graph(int n ) {
     
-    //std::cout<< n << endl;
     num_nodes=n;
     if (n<0)
     {
@@ -106,7 +74,6 @@ Weighted_graph::Weighted_graph(int n ) {
         }
     }
 
-    
     num_nodes=n;
     num_edges=0;
 }

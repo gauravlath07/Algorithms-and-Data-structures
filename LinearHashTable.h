@@ -1,19 +1,6 @@
 #ifndef LINEAR_HASH_TABLE_H
 #define LINEAR_HASH_TABLE_H
 
-/*****************************************
- * UW User ID:  20617513
- * Submitted for ECE 250
- * Semester of Submission:  Fall 2016
- *
- * By submitting this file, I affirm that
- * I am the author of all modifications to
- * the provided code.
- *****************************************/
-
-#include "Exception.h"
-#include "ece250.h"
-
 enum state {EMPTY, OCCUPIED, DELETED};
 
 template<typename T>

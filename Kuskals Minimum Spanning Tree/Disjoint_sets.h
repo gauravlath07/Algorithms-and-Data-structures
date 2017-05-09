@@ -76,36 +76,20 @@ initial_num_sets(n) {
     nun = n;
 
 }
-   	// initialize the sets
-
-
 
 Disjoint_set::~Disjoint_set() {
     
     for(int i=0; i<nun;i++)
     {
-        // nodes[i]=new ll_entry;
         delete nodes[i];
-        
-        
         delete sets[i];
-       
-        
-        //nodes[i]->content = i;
-        //nodes[i]->ptr_to_info=sets[i];
-        //sets[i]->size=1;
-        
-        //sets[i]->head = nodes[i];
-        //sets[i]->tail = nodes[i];
-        
     }
     delete[] nodes;
     delete[] sets;
 }
+
 int Disjoint_set::find_set(int item) const{
-	// should it be? return nodes[item]->ptr_to_info->head->content
     return nodes[item]->ptr_to_info->head->content;
-	
 }
 
 int Disjoint_set::num_sets() const {
@@ -116,17 +100,6 @@ void Disjoint_set::union_sets(int node_index1, int node_index2) {
 	
 	if (node_index1 == node_index2)
 		return;
-    
-    //set_info* si1 = nodes[node_index1]->ptr_to_info;
-	//set_info* si2 = nodes[node_index2]->ptr_to_info;
-
-    
-    //ni1: the index of the larger set, ni2: the index of the smaller set
-	//int ni1 = si1->size >= si2->size ? node_index1 : node_index2;
-	//int ni2 = si1->size < si2->size ? node_index1 : node_index2;
-    
-    // size of the larger set
-    //int tmp_size=nodes[ni1]->ptr_to_info->size;
     
     //add size of first one to second
     nodes[node_index1]->ptr_to_info->size=(nodes[node_index1]->ptr_to_info->size)+(nodes[node_index2]->ptr_to_info->size);
@@ -143,15 +116,9 @@ void Disjoint_set::union_sets(int node_index1, int node_index2) {
     //std::cout<<temp_ptr -> content<<std::endl;
 	// iterate through the shorter list and modify the pointers
 	while (temp_ptr != nullptr) {
-       // temp_ptr[nodes]->ptr_to_info=nodes[ni2]->ptr_to_info;
         temp_ptr->ptr_to_info=nodes[node_index1]->ptr_to_info;
         temp_ptr = temp_ptr->next;
 	}
-
-	// do we need to modify anything else?
-	
-
-	// delete the set_info entry that no longer exists
 	
 	
 	
